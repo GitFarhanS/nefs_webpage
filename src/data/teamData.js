@@ -1,31 +1,31 @@
 const wix = (id, name) => {
   const encoded = encodeURIComponent(name);
-  return `https://static.wixstatic.com/media/${id}/v1/fill/w_400,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/${encoded}`;
+  return `https://static.wixstatic.com/media/${id}/v1/fill/w_400,h_400,al_c,q_85,enc_auto,quality_auto/${encoded}`;
 };
 
 export const NEFS_LOGO =
-  "https://static.wixstatic.com/media/be2b91_61f874cd857548cda5d402b59a8b4844~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/NEFS%20logo%20white%20borders.png";
+  "https://static.wixstatic.com/media/be2b91_61f874cd857548cda5d402b59a8b4844~mv2.png/v1/fill/w_200,h_200,al_c,q_85,enc_auto,quality_auto/NEFS%20logo%20white%20borders.png";
 
 export const NEFS_LOGO_COLOR =
-  "https://static.wixstatic.com/media/be2b91_b60a6141daa34ebeb1f1f9e329d34142~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/NEFS%20logo.png";
+  "https://static.wixstatic.com/media/be2b91_b60a6141daa34ebeb1f1f9e329d34142~mv2.png/v1/fill/w_200,h_200,al_c,q_85,enc_auto,quality_auto/NEFS%20logo.png";
 
 export const ABOUT_HERO =
-  "https://static.wixstatic.com/media/be2b91_3234751518c44fb1a33dc286f72ecdea~mv2.jpeg/v1/fill/w_1200,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-09-01%20at%2017_10_15.jpeg";
+  "https://static.wixstatic.com/media/be2b91_3234751518c44fb1a33dc286f72ecdea~mv2.jpeg/v1/fill/w_1200,h_900,al_c,q_80,enc_auto,quality_auto/WhatsApp%20Image%202025-09-01%20at%2017_10_15.jpeg";
 
 export const HOMEPAGE_BG =
-  "https://static.wixstatic.com/media/be2b91_68a9f35a24ed4876aef76d9f951e980b~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/be2b91_68a9f35a24ed4876aef76d9f951e980b~mv2.jpg";
+  "https://static.wixstatic.com/media/be2b91_68a9f35a24ed4876aef76d9f951e980b~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_80,enc_auto,quality_auto/be2b91_68a9f35a24ed4876aef76d9f951e980b~mv2.jpg";
 
 export const sponsors = {
   platinum: [
     {
       name: "EY",
-      logo: "https://static.wixstatic.com/media/be2b91_01b55f09f50b44b1908c3864196db4f3~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/EY_idh3Sg1g92_1.png",
+      logo: "https://static.wixstatic.com/media/be2b91_01b55f09f50b44b1908c3864196db4f3~mv2.png/v1/fill/w_200,h_200,al_c,q_85,enc_auto,quality_auto/EY_idh3Sg1g92_1.png",
       description:
         'EY is one of the "Big Four" multinational professional services firms, providing Assurance, Tax, Consulting, and Strategy and Transactions services globally.',
     },
     {
       name: "Capital One",
-      logo: "https://static.wixstatic.com/media/be2b91_2a6ee3ea5a56423cac28d7828c483d4e~mv2.png/v1/fill/w_300,h_110,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/idDuG1jJQ7_1762880669704.png",
+      logo: "https://static.wixstatic.com/media/be2b91_2a6ee3ea5a56423cac28d7828c483d4e~mv2.png/v1/fill/w_300,h_110,al_c,q_85,enc_auto,quality_auto/idDuG1jJQ7_1762880669704.png",
       description:
         "Capital One is a major American bank holding company with European headquarters in Nottingham, specializing in credit cards, auto loans, and banking.",
     },
@@ -33,19 +33,19 @@ export const sponsors = {
   gold: [
     {
       name: "UBS",
-      logo: "https://static.wixstatic.com/media/be2b91_c2c8567fb45643f5bec3df458f5d5e52~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/idO8-dZ76p_1763581137749.png",
+      logo: "https://static.wixstatic.com/media/be2b91_c2c8567fb45643f5bec3df458f5d5e52~mv2.png/v1/fill/w_200,h_200,al_c,q_85,enc_auto,quality_auto/idO8-dZ76p_1763581137749.png",
       description:
         "UBS is a leading global financial services firm providing financial advice and solutions to private, institutional, and corporate clients worldwide.",
     },
     {
       name: "Fidelity Investments",
-      logo: "https://static.wixstatic.com/media/be2b91_e7ebe607a7994509bbdeb6aa6766409d~mv2.png/v1/fill/w_300,h_95,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/idfu1zHY0m_1762880813186.png",
+      logo: "https://static.wixstatic.com/media/be2b91_e7ebe607a7994509bbdeb6aa6766409d~mv2.png/v1/fill/w_300,h_95,al_c,q_85,enc_auto,quality_auto/idfu1zHY0m_1762880813186.png",
       description:
         "Fidelity Investments is one of the world's largest independent investment fund managers, focused on strengthening financial wellbeing.",
     },
     {
       name: "Wells Fargo",
-      logo: "https://static.wixstatic.com/media/be2b91_b6471ca1c60f445cb306b3cacc4028be~mv2.png/v1/fill/w_300,h_30,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/idzPHELBqu_1762880872293.png",
+      logo: "https://static.wixstatic.com/media/be2b91_b6471ca1c60f445cb306b3cacc4028be~mv2.png/v1/fill/w_300,h_30,al_c,q_85,enc_auto,quality_auto/idzPHELBqu_1762880872293.png",
       description:
         "Wells Fargo is the fourth-largest bank in the US by total assets, offering banking, mortgage, asset management, and wealth management.",
     },
@@ -53,13 +53,13 @@ export const sponsors = {
   silver: [
     {
       name: "WorldQuant",
-      logo: "https://static.wixstatic.com/media/be2b91_564e97225e9b4745aef292d4687840f1~mv2.png/v1/fill/w_240,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Pink%20Poppy%20Flowers.png",
+      logo: "https://static.wixstatic.com/media/be2b91_564e97225e9b4745aef292d4687840f1~mv2.png/v1/fill/w_240,h_68,al_c,q_85,enc_auto,quality_auto/Pink%20Poppy%20Flowers.png",
       description:
         "WorldQuant is a leading quantitative investment management firm utilizing data mining, statistics, and AI to develop strategies.",
     },
     {
       name: "Scotiabank",
-      logo: "https://static.wixstatic.com/media/be2b91_6c70eb0e7ccd4bb489feb38c9a6f2caf~mv2.png/v1/fill/w_300,h_56,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Scotiabank_id3Ga1ZJjW_1.png",
+      logo: "https://static.wixstatic.com/media/be2b91_6c70eb0e7ccd4bb489feb38c9a6f2caf~mv2.png/v1/fill/w_300,h_56,al_c,q_85,enc_auto,quality_auto/Scotiabank_id3Ga1ZJjW_1.png",
       description:
         'Scotiabank is one of Canada\'s "Big Five" banks, recognized as "Canada\'s most international bank" with operations across Latin America and the Caribbean.',
     },
@@ -67,31 +67,31 @@ export const sponsors = {
   bronze: [
     {
       name: "Deutsche Bank",
-      logo: "https://static.wixstatic.com/media/be2b91_5fd3f52fee47476c8d86f71b4e90b46c~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Deutsche%20Bank_id7Ee9EU3R_1.png",
+      logo: "https://static.wixstatic.com/media/be2b91_5fd3f52fee47476c8d86f71b4e90b46c~mv2.png/v1/fill/w_200,h_200,al_c,q_85,enc_auto,quality_auto/Deutsche%20Bank_id7Ee9EU3R_1.png",
       description:
         "Deutsche Bank is a leading German multinational investment bank and financial services company spanning 56 countries.",
     },
     {
       name: "Compass Lexecon",
-      logo: "https://static.wixstatic.com/media/be2b91_45d57ecc62d94aeea145214e27e40dbe~mv2.jpeg/v1/fill/w_200,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Pink%20Poppy%20Flowers.jpeg",
+      logo: "https://static.wixstatic.com/media/be2b91_45d57ecc62d94aeea145214e27e40dbe~mv2.jpeg/v1/fill/w_200,h_200,al_c,q_80,enc_auto,quality_auto/Pink%20Poppy%20Flowers.jpeg",
       description:
         "Compass Lexecon is a global leader in economic consulting, providing expert analysis for legal and regulatory proceedings.",
     },
     {
       name: "Oliver Wyman",
-      logo: "https://static.wixstatic.com/media/be2b91_aa94d38335cd42fbb6f32d86f6c14eee~mv2.png/v1/fill/w_300,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Oliver%20Wyman_idN3Npc_J7_1.png",
+      logo: "https://static.wixstatic.com/media/be2b91_aa94d38335cd42fbb6f32d86f6c14eee~mv2.png/v1/fill/w_300,h_34,al_c,q_85,enc_auto,quality_auto/Oliver%20Wyman_idN3Npc_J7_1.png",
       description:
         "Oliver Wyman is a global leader in management consulting, combining deep industry knowledge with specialized expertise.",
     },
     {
       name: "FO Perspectives",
-      logo: "https://static.wixstatic.com/media/be2b91_962674491c364278acd40c83d25fb34a~mv2.jpg/v1/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/FO%20Perspectives.jpg",
+      logo: "https://static.wixstatic.com/media/be2b91_962674491c364278acd40c83d25fb34a~mv2.jpg/v1/fill/w_200,h_200,al_c,q_80,enc_auto,quality_auto/FO%20Perspectives.jpg",
       description:
         "FO Perspectives bridges the gap between employers and underrepresented talent through recruitment marketing and career development.",
     },
     {
       name: "Vinson Centre",
-      logo: "https://static.wixstatic.com/media/be2b91_53f0782fa208432b88d775ecda0aa34b~mv2.png/v1/fill/w_200,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Vinson%20Centre.png",
+      logo: "https://static.wixstatic.com/media/be2b91_53f0782fa208432b88d775ecda0aa34b~mv2.png/v1/fill/w_200,h_142,al_c,q_85,enc_auto,quality_auto/Vinson%20Centre.png",
       description:
         "The Vinson Centre promotes understanding of Classical Liberalism, free markets, and entrepreneurship at the University of Buckingham.",
     },
