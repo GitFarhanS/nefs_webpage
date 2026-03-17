@@ -1,10 +1,18 @@
+import { useScrollReveal } from "./ScrollReveal";
+
 export default function TeamGrid({ members }) {
+  const ref = useScrollReveal();
+
   if (!members || members.length === 0) return null;
 
   return (
-    <div className="team-grid">
-      {members.map((m) => (
-        <div className="team-member" key={m.name}>
+    <div className="team-grid" ref={ref}>
+      {members.map((m, i) => (
+        <div
+          className="team-member reveal"
+          key={m.name}
+          style={{ transitionDelay: `${i * 0.1}s` }}
+        >
           <div className="team-avatar">
             {m.image ? (
               <img src={m.image} alt={m.name} loading="lazy" />

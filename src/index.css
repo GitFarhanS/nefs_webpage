@@ -893,6 +893,333 @@ section {
   }
 }
 
+/* ===== PAGE TRANSITIONS ===== */
+.page-transition {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.page-enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-exit {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* ===== HEADER SCROLL STATE ===== */
+.site-header {
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+.header-scrolled {
+  background: rgba(15, 31, 61, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== HERO ENTRANCE ===== */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-up {
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.hero-title-animated {
+  animation: titleReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+/* ===== GRADIENT SHIMMER ON HERO TITLE ===== */
+.hero h1.hero-title-animated {
+  background: linear-gradient(
+    90deg,
+    var(--white) 0%,
+    var(--white) 40%,
+    rgba(201, 168, 76, 0.7) 50%,
+    var(--white) 60%,
+    var(--white) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both,
+             shimmer 4s ease-in-out 2s infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+}
+
+/* ===== FLOATING PARTICLES ===== */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--white);
+  animation: float linear infinite;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(15px, -25px) scale(1.1);
+  }
+  50% {
+    transform: translate(-10px, -50px) scale(0.9);
+  }
+  75% {
+    transform: translate(20px, -25px) scale(1.05);
+  }
+}
+
+/* ===== SCROLL INDICATOR ===== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.scroll-indicator span {
+  display: block;
+  width: 24px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  position: relative;
+}
+.scroll-indicator span::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) translateY(12px);
+    opacity: 0.3;
+  }
+}
+
+/* ===== BUTTON GLOW ===== */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent, rgba(255,255,255,0.2));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.btn-glow:hover::after {
+  opacity: 1;
+}
+
+/* ===== DIVISION CARD HOVER GLOW ===== */
+.division-card {
+  position: relative;
+  overflow: hidden;
+}
+.division-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(58, 107, 197, 0.06), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.division-card:hover::before {
+  left: 125%;
+}
+
+/* ===== DIVISION ICON BOUNCE ===== */
+.division-card:hover .division-icon {
+  transform: scale(1.08) rotate(-2deg);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.division-icon {
+  transition: transform 0.3s ease;
+}
+
+/* ===== STAT CARD SHIMMER BORDER ===== */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-light), var(--gold), var(--blue-light));
+  background-size: 200% 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.stat-card:hover::after {
+  transform: scaleX(1);
+  animation: gradientSlide 2s ease infinite;
+}
+@keyframes gradientSlide {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== TEAM MEMBER HOVER EFFECTS ===== */
+.team-avatar {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  position: relative;
+}
+.team-member:hover .team-avatar {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 4px var(--blue-pale), 0 8px 24px rgba(26, 58, 107, 0.15);
+}
+
+/* ===== SKILL TAG ENTRANCE ===== */
+@keyframes tagPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.revealed .skill-tag-animated {
+  animation: tagPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ===== SPONSOR CARD HOVER ===== */
+.sponsor-detail-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+.sponsor-detail-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue-pale);
+}
+
+/* ===== NAV LINK UNDERLINE ANIMATION ===== */
+.nav-menu > li > a {
+  position: relative;
+}
+.nav-menu > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0.85rem;
+  right: 0.85rem;
+  height: 2px;
+  background: var(--white);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-menu > li > a:hover::after,
+.nav-menu > li > a.active::after {
+  transform: scaleX(1);
+}
+
+/* ===== SOCIAL LINK PULSE ===== */
+.social-links a {
+  position: relative;
+}
+.social-links a::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover::before {
+  opacity: 0.3;
+  transform: scale(1.15);
+}
+
+/* ===== FOOTER LINK SLIDE ===== */
+.footer-links a {
+  position: relative;
+  padding-bottom: 1px;
+}
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: width 0.3s ease;
+}
+.footer-links a:hover::after {
+  width: 100%;
+}
+
 /* ===== FOCUS ===== */
 :focus-visible {
   outline: 3px solid var(--blue-light);
@@ -908,5 +1235,31 @@ section {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .hero-title-animated,
+  .hero-fade-up {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    -webkit-text-fill-color: var(--white);
+    background: none;
+  }
+  .page-transition {
+    opacity: 1;
+    transform: none;
+  }
+  .particles {
+    display: none;
+  }
+}
+
+/* ===== MOBILE NAV UNDERLINE CLEANUP ===== */
+@media (max-width: 768px) {
+  .nav-menu > li > a::after {
+    display: none;
   }
 }

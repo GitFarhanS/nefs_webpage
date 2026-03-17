@@ -1,6 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { divisions, NEFS_LOGO } from "../data/teamData";
+
+const PAGE_TRANSITION_MS = 300;
 
 const divisionLinks = divisions.map((d) => ({
   to: `/division/${d.slug}`,
@@ -30,14 +32,34 @@ function Chevron() {
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [pageVisible, setPageVisible] = useState(true);
   const location = useLocation();
   const dropdownRef = useRef(null);
+  const prevPath = useRef(location.pathname);
+
+  useEffect(() => {
+    if (prevPath.current !== location.pathname) {
+      setPageVisible(false);
+      const t = setTimeout(() => {
+        window.scrollTo(0, 0);
+        setPageVisible(true);
+      }, PAGE_TRANSITION_MS);
+      prevPath.current = location.pathname;
+      return () => clearTimeout(t);
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     setMenuOpen(false);
     setDropdownOpen(false);
-    window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -68,7 +90,7 @@ export default function Layout() {
     <>
       <a className="skip-link" href="#main">Skip to main content</a>
 
-      <header className="site-header" role="banner">
+      <header className={`site-header${scrolled ? " header-scrolled" : ""}`} role="banner">
         <nav className="nav-container" aria-label="Main navigation">
           <Link to="/" className="logo" aria-label="NEFS Home">
             <img src={NEFS_LOGO} alt="" className="logo-img" />
@@ -129,7 +151,7 @@ export default function Layout() {
         </nav>
       </header>
 
-      <main id="main">
+      <main id="main" className={`page-transition${pageVisible ? " page-enter" : " page-exit"}`}>
         <Outlet />
       </main>
 
