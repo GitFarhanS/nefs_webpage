@@ -12,7 +12,7 @@ export default function Division() {
   }
 
   return (
-    <>
+    <div key={slug}>
       <section className="page-header">
         <div className="container">
           <h1 className="hero-fade-up">{division.name}</h1>
@@ -56,6 +56,6 @@ export default function Division() {
           )}
         </div>
       </section>
-    </>
+    </div>
   );
 }
